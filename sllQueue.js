@@ -1,19 +1,16 @@
-// Queue using SLL
 
 function Node(val){
   this.val = val;
   this.next = null;
 }
 
-function SLL(){
+function SLLQueue(){
 
   this.length = 0;
   this.head = null;
   this.tail = null;
-  
-  this.find = function(val){
-  
-    //var node = new Node(val);
+}  
+SLLQueue.prototype.find = function(val){
 
     if(this.head === null){
 
@@ -35,15 +32,15 @@ function SLL(){
     }
 
 
-  }
+}
 
-  this.info = function(){
+SLLQueue.prototype.info = function(){
     return `head is: ${JSON.stringify(this.head)}, 
             tail is: ${JSON.stringify(this.tail)},
             length is: ${JSON.stringify(this.length)}`;
-  }
+}
 
-  this.enqueue = function(val){
+SLLQueue.prototype.enqueue = function(val){
 
     let node = new Node(val);
 
@@ -60,15 +57,14 @@ function SLL(){
     this.length++;
 
     }
-  }
+}
 
-  this.dequeue = function(){
+SLLQueue.prototype.dequeue = function(){
     let temp = this.head;
     this.head = this.head.next;
     temp.next = null;
     return temp;
-  }
-
 }
 
-module.exports = SLL;
+
+module.exports = SLLQueue;
