@@ -23,7 +23,7 @@ function SLL(){
 
       runner = this.head;
 
-      while(runner){
+      while(runner.next){
 
         if (runner.val === val){
           return true;
